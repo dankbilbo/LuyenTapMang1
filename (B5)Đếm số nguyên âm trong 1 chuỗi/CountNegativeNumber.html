@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số nguyên âm trong 1 chuỗi</title>
+</head>
+<body>
+<input id="num" type="numb">
+<button onclick="addElement()" id="add">Add</button>
+<button onclick="countNegative()" id="reverse">Count</button>
+<p id="1"></p>
+<script>
+    let arr = new Array();
+    let count = 0;
+    function addElement() {
+        let num = document.getElementById("num").value;
+        arr.push(num);
+    }
+
+    function countNegative() {
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i] < 0 && arr[i] % 1 == 0) {
+                count++;
+                console.log(count);
+            }
+        }
+        document.getElementById("1").innerHTML = "so nguyen am trong chuoi la " + count;
+    }
+</script>
+</body>
+</html>

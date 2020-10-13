@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check và xóa V khỏi mảng</title>
+</head>
+<body onload="createCheckAndRemove()">
+<p id="2"></p>
+<p id="1"></p>
+<script>
+    let arr = new Array();
+    var v;
+
+    function createCheckAndRemove() {
+        let count = 0;
+        do {
+            let num = +prompt("Nhap 1 phan tu cua mang");
+            if (num % 1 == 0) {
+                arr.push(num);
+                count++;
+            } else {
+                alert("Nhập lại số nguyên");
+            }
+        } while (count < 10);
+
+        do {
+            v = +prompt("Nhập số nguyên v");
+            if (v % 1 != 0) {
+                alert("Nhập lại số nguyên");
+            } else {
+                break;
+            }
+        } while (1);
+        // console.log(v);
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] == v){
+                if(i < arr.length - 1){
+                    for(let j = 0; j < arr.length - 1; j++) {
+                        arr[j] = arr[j + 1];
+                    }
+                    arr[arr.length - 1] = 0;
+                }else{
+                    arr[i] = 0;
+                }
+            }
+            document.getElementById("2").innerHTML += (arr[i] + " ");
+        }
+
+    }
+</script>
+</body>
+</html>

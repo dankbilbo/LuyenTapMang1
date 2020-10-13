@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp thú tự giảm dần mảng 10 phần tử số nguyên</title>
+</head>
+<body onload="createArray()">
+<button onclick="sortArray()">Sort</button>
+<p id="1"></p>
+<p id="2"></p>
+<script>
+    let arr = new Array();
+
+    function createArray() {
+        let count = 0;
+        do {
+            let num = +prompt("Nhap 1 phan tu cua mang");
+            if (num % 1 == 0) {
+                arr.push(num);
+                count++;
+            } else {
+                alert("Nhập lại số nguyên");
+            }
+        } while (count < 10);
+
+        for(let i = 0; i < 10; i++){
+            document.getElementById("1").innerHTML += (" " + arr[i]);
+        }
+    }
+    function sortArray(){
+        for(let i = 0; i < arr.length; i++){
+            for(let j = 0; j < arr.length; j++){
+                if(arr[i] > arr[j]){
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for(let i = 0; i < 10; i++){
+            document.getElementById("2").innerHTML += (" " + arr[i]);
+        }
+    }
+</script>
+</body>
+</html>

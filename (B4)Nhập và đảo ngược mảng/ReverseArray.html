@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập và đảo ngược mảng</title>
+</head>
+<body>
+<input id="num" type="numb">
+<button onclick="addElement()" id="add">Add</button>
+<button onclick="reverseArray()" id="reverse">Reverse</button>
+<p id="2"></p>
+<p id="1"></p>
+<script>
+    let arr = new Array();
+    let temp;
+
+    function addElement() {
+        let num = document.getElementById("num").value;
+        if(num % 1 == 0) {
+            arr.push(num);
+        }else{
+            alert("nhap số nguyên");
+        }
+    }
+
+    function reverseArray() {
+        for (let i = 0; i < arr.length / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        for (let i = 0; i < arr.length; i++) {
+            document.getElementById("1").innerHTML += (" " + arr[i]);
+        }
+    }
+</script>
+</body>
+</html>

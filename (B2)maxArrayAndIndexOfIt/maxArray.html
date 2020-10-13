@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gía trị lớn nhất mảng và index của nó</title>
+</head>
+<body onload="findMax()">
+<p id="1"></p>
+<script>
+    let arr = new Array();
+    function findMax(){
+        let count = 0;
+        do{
+            let num = +prompt("Nhap 1 phan tu cua mang");
+            if(num % 1 == 0) {
+                arr.push(num);
+                count++;
+            }else{
+                alert("Nhập lại số nguyên");
+            }
+        }while(count < 10);
+
+        let max = arr[0];
+        for(let i = 0; i < 10; i++){
+            if(arr[i] > max){
+                max = arr[i];
+                document.getElementById("1").innerHTML = "max la " + max + " tai index i la " + i;
+            }
+        }
+    }
+</script>
+</body>
+</html>

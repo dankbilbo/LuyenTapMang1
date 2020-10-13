@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nối 2 mảng a và b thành mảng c</title>
+</head>
+<body>
+<input id="num" type="num">
+<button onclick="addElement1()">Add array 1</button>
+<button onclick="addElement2()">Add array 2</button>
+<button onclick="merge()">Show Array Merged</button>
+<script>
+    let arr1 = new Array();
+    let arr2 = new Array();
+    function addElement1() {
+        let num = document.getElementById("num").value;
+        if(num % 1 == 0) {
+            arr1.push(num);
+        }else{
+            alert("nhap số nguyên");
+        }
+    }
+    function addElement2() {
+        let num = document.getElementById("num").value;
+        if(num % 1 == 0) {
+            arr2.push(num);
+        }else{
+            alert("nhap số nguyên");
+        }
+    }
+    function merge(){
+        let arrMerged  = new Array();
+        arrMerged.length = arr1.length + arr2.length;
+        for(let i = 0; i < arr1.length ; i++){
+            arrMerged[i] = arr1[i];
+            console.log(arrMerged[1]);
+        }
+        for(let i = arr1.length; i < arrMerged.length; i++){
+            arrMerged[i] = arr2[i - arr1.length];
+        }
+        for(let i = 0; i < arrMerged.length; i++){
+            document.write(arrMerged[i] + " ");
+        }
+    }
+</script>
+</body>
+</html>
